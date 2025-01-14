@@ -619,6 +619,5 @@
             android:contentDescription="Profile"
             android:backgroundTint="#FFFFFF"
             android:scaleType="centerInside" />
-
     </LinearLayout>
 </LinearLayout>

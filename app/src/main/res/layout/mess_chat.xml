@@ -38,20 +38,21 @@
         android:padding="8dp"
         android:background="#F5F5F5">
 
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:padding="8dp"
             android:text="Nhắn tin"
-            android:textStyle="bold"
             android:textColor="#5F9EA0"
             android:textSize="16sp"
-            android:gravity="center"
-            android:background="?attr/selectableItemBackground"
-            android:padding="8dp" />
-
+            android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/Notify"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

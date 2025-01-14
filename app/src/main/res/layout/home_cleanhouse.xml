@@ -5,6 +5,7 @@
 
     <!-- Hình ảnh nền -->
     <ImageView
+        android:id="@+id/btnBack"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/background_tet"
@@ -130,6 +131,7 @@
     </ScrollView>
 
     <Button
+        android:id="@+id/btnBook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

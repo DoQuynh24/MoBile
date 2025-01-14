@@ -2,6 +2,7 @@ package com.example.cleango;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
@@ -10,7 +11,8 @@ import android.widget.TimePicker;
 import androidx.appcompat.app.AppCompatActivity;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-
+import android.view.View;
+import android.widget.Button;
 public class CleanHouse1Act extends AppCompatActivity {
 
     private TextView tvChosenDate; // TextView hiển thị ngày đã chọn
@@ -25,6 +27,7 @@ public class CleanHouse1Act extends AppCompatActivity {
         tvChosenDate = findViewById(R.id.tvChosenDate); // TextView cho ngày
         tvChosenTime = findViewById(R.id.tvChosenTime); // TextView cho giờ
 
+        Button btnNext = findViewById(R.id.btnNext);
         calendar = Calendar.getInstance();
 
         // Sự kiện chọn ngày
@@ -40,6 +43,15 @@ public class CleanHouse1Act extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 showTimePickerDialog();
+            }
+        });
+        // Xử lý sự kiện click cho nút btnNext
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Chuyển sang CleanHouse1Act với layout clean_house1.xml
+                Intent intent = new Intent(CleanHouse1Act.this, ConfirmActivity.class);
+                startActivity(intent);
             }
         });
     }

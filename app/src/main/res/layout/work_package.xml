@@ -40,35 +40,38 @@
         android:background="#F5F5F5">
 
         <TextView
+            android:id="@+id/tab_waiting"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:padding="8dp"
             android:text="Chờ làm"
             android:textColor="#000000"
-            android:textSize="16sp"
-            android:gravity="center"
-            android:background="?attr/selectableItemBackground"
-            android:padding="8dp" />
+            android:textSize="16sp"/>
 
 
         <TextView
+            android:id="@+id/tab_repeat"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:padding="8dp"
             android:text="Lặp lại"
             android:textColor="#000000"
-            android:textSize="16sp"
-            android:gravity="center"
-            android:background="?attr/selectableItemBackground"
-            android:padding="8dp" />
+            android:textSize="16sp" />
         <TextView
+            android:id="@+id/tab_package"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Gói tháng"
             android:textColor="#5F9EA0"
-            android:textSize="16sp"
             android:textStyle="bold"
+            android:textSize="16sp"
             android:gravity="center"
             android:background="?attr/selectableItemBackground"
             android:padding="8dp" />
