@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Thanh địa chỉ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#43D0ECF4"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back"
+                android:contentDescription="Back"
+                android:onClick="onBackPressed" /> <!-- Gọi phương thức quay lại khi nhấn -->
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="30dp"
+                android:contentDescription="Icon"
+                android:src="@drawable/location" />
+
+            <!-- Địa chỉ chính -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:paddingStart="8dp"
+                android:singleLine="true"
+                android:text="Xóm 3 Đông Nhân"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:layout_gravity="center_vertical" />
+
+            <!-- Mũi tên xuống -->
+            <ImageView
+                android:id="@+id/arrow_down"
+                android:layout_width="10dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/down"
+                android:contentDescription="Dropdown"
+                android:padding="0dp"
+                android:layout_gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <!-- View rỗng để đẩy nút menu sang phải -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <!-- Nút Menu -->
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/help"
+                android:contentDescription="Menu"
+                android:layout_gravity="center_vertical" />
+        </LinearLayout>
+
+        <!-- Địa chỉ phụ -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="Xóm 3, Đông Nhân, Đông La, Hoài Đức"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginStart="80dp"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:background="#fefefe">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thời lượng"
+                android:layout_marginTop="5dp"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Vui lòng ước tính diện tích cần dọn dẹp và chọn phương án phù hợp."
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+
+                android:layout_marginTop="16dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:backgroundTint="#E8F5E9"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="2 giờ: Tối đa 55m² hoặc 2 phòng"
+                        android:textSize="15sp"
+                        android:textColor="#388E3C"
+                        android:fontFamily="sans-serif-medium" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:backgroundTint="#FFEBEE"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="3 giờ: Tối đa 85m² hoặc 3 phòng"
+                        android:textSize="15sp"
+                        android:textColor="#D32F2F"
+                        android:fontFamily="sans-serif-medium" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#E3F2FD"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="4 giờ: Tối đa 105m² hoặc 4 phòng"
+                        android:textSize="15sp"
+                        android:textColor="#1976D2"
+                        android:fontFamily="sans-serif-medium" />
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/TVS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="* Lưu ý: Dịch vụ hỗ trợ tối đa 4 giờ. Đối với thời gian dài hơn, vui lòng đặt dịch vụ Tổng Vệ Sinh hoặc đặt 2 công việc có khung thời gian gần nhau."
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chọn dịch vụ Premium"
+                android:textSize="17sp"
+                android:layout_marginTop="16dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:elevation="2dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_borde"
+                android:padding="8dp">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/premium"
+                    android:layout_marginRight="8dp" />
+                <Switch
+                    android:id="@+id/switchPremium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dịch vụ Premium"
+                    android:layout_marginTop="5dp"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#40C9C9C9"
+                android:elevation="2dp"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:radius="15dp">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="8dp"
+                    android:src="@drawable/success" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Đã bao gồm bộ công cụ"
+                    android:textSize="14sp" />
+                <!-- View rỗng để đẩy nút menu sang phải -->
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="3dp"
+                    android:src="@drawable/down"
+                    android:contentDescription="Dropdown"
+                    android:padding="0dp"
+                    android:layout_gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dịch vụ thêm"
+                android:layout_marginTop="20dp"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Bạn có thể chọn thêm dịch vụ."
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#fefefe"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:weightSum="2">
+
+                <!-- Nút "Nấu ăn" -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <ImageButton
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/cook"
+                        android:background="#fefefe"
+                        android:scaleType="centerInside" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nấu ăn +1h"
+                        android:textSize="13sp"
+                        android:textAlignment="center"
+                        android:layout_marginTop="5dp" />
+                </LinearLayout>
+
+                <!-- Nút "Ủi đồ" -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:background="#fefefe"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ironing" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ủi đồ +1h"
+                        android:textSize="13sp"
+                        android:textAlignment="center"
+                        android:layout_marginTop="5dp" />
+                </LinearLayout>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tùy chọn"
+                android:textSize="17sp"
+                android:layout_marginTop="16dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:elevation="2dp"
+                android:layout_marginTop="16dp"
+                android:padding="8dp">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/pet"
+                    android:layout_marginRight="8dp" />
+                <Switch
+                    android:id="@+id/switchPets"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nhà có vật nuôi"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15sp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:elevation="2dp"
+                android:padding="8dp">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/tasker"
+                    android:layout_marginRight="8dp" />
+                <Switch
+                    android:id="@+id/switchTasker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bạn tự chọn Cleango"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15sp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:elevation="2dp"
+                android:padding="8dp">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/favourite"
+                    android:layout_marginRight="8dp" />
+
+                <Switch
+                    android:id="@+id/switchFavourite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="Ưu tiên Cleango yêu thích"
+                    android:textSize="15sp"
+                    android:thumbTint="#1fb141"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#40C9C9C9"
+                android:elevation="2dp"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:radius="15dp">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/new1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Chi tiết công việc"
+                    android:textSize="14sp" />
+                <!-- View rỗng để đẩy nút menu sang phải -->
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="3dp"
+                    android:src="@drawable/down"
+                    android:contentDescription="Dropdown"
+                    android:padding="0dp"
+                    android:layout_gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#43D0ECF4">
+
+        <!-- TextView hiển thị giá -->
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="278,000 VND/2h"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="16dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#1fb141"
+            android:textSize="16sp"
+            android:text="Tiếp theo"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</LinearLayout>
