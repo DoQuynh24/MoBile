@@ -31,7 +31,10 @@
         <activity android:name=".CleanHouseAct" />
         <activity android:name=".CleanHouse1Act" />
         <activity android:name=".HomeCleanhouseActivity" />
-
+        <activity android:name=".AccActivity" />
+        <activity android:name=".InforActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".RegisterActivity" />
     </application>
 
 </manifest>

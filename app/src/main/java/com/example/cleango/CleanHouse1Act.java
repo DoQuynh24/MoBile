@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import androidx.appcompat.app.AppCompatActivity;
@@ -52,6 +53,19 @@ public class CleanHouse1Act extends AppCompatActivity {
                 // Chuyển sang CleanHouse1Act với layout clean_house1.xml
                 Intent intent = new Intent(CleanHouse1Act.this, ConfirmActivity.class);
                 startActivity(intent);
+            }
+        });
+        // Tìm ImageView btnBack theo ID
+        ImageView btnBack = findViewById(R.id.btnBack);
+
+        // Xử lý sự kiện click cho btnBack
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Quay lại MainActivity
+                Intent intent = new Intent(CleanHouse1Act.this, CleanHouseAct.class);
+                startActivity(intent);
+                finish(); // Kết thúc activity hiện tại
             }
         });
     }

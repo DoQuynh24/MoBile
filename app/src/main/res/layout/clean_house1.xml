@@ -15,19 +15,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <ImageView
+                android:id="@+id/btnBack"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/back"
+                android:layout_height="match_parent"
                 android:contentDescription="Back"
-                android:onClick="onBackPressed" /> <!-- Gọi phương thức quay lại khi nhấn -->
+                android:onClick="onBackPressed"
+                android:src="@drawable/back" /> <!-- Gọi phương thức quay lại khi nhấn -->
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Chọn thời gian làm việc"
                 android:textStyle="bold"
-                android:layout_marginStart="50dp"
+
+                android:layout_marginStart="60dp"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="20sp" />

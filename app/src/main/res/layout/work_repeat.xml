@@ -30,7 +30,6 @@
             android:textSize="16sp"
             android:textStyle="bold"/>
     </LinearLayout>
-
     <!-- Thanh tab -->
     <LinearLayout
         android:layout_width="match_parent"

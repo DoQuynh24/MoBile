@@ -29,7 +29,7 @@
                     <ImageView
                         android:layout_width="75dp"
                         android:layout_height="75dp"
-                        android:src="@drawable/avatar"
+                        android:src="@drawable/img_14"
                         android:contentDescription="Avatar"
                         android:background="@drawable/circle_background"
                         android:clipToOutline="true"
@@ -37,19 +37,11 @@
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="30dp"/>
 
-                    <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:src="@drawable/premium"
-                        android:contentDescription="Badge"
-                        android:layout_gravity="bottom|end" />
                 </FrameLayout>
-
-
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="15dp"
                     android:layout_marginLeft="15dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
@@ -57,19 +49,35 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Quỳnh Đỗ"
-                        android:textColor="#000000"
-                        android:textSize="19sp"
+                        android:text="Chào mừng đến với Cleango"
+                        android:textColor="#5F9EA0"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/btnInfor"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Xem hồ sơ >"
-                        android:textColor="#05AB34"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/btnLogin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Đăng nhập / "
+                            android:textColor="#05AB34"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/btnRegister"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Đăng ký"
+                            android:textColor="#05AB34"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
 
@@ -511,7 +519,7 @@
                     android:clickable="true"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-
+                    android:id="@+id/btnSetting"
                     android:padding="12dp">
 
                     <ImageView
@@ -521,7 +529,6 @@
                         android:src="@drawable/setting" />
 
                     <TextView
-                        android:id="@+id/btnSetting"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
