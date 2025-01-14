@@ -27,7 +27,8 @@
                 android:layout_height="wrap_content"
                 android:text="Chọn thời gian làm việc"
                 android:textStyle="bold"
-                android:layout_marginStart="50dp"
+
+                android:layout_marginStart="60dp"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="20sp" />
