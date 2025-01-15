@@ -1,0 +1,68 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".SelectLocationActivity">
+
+    <!-- Thanh tiêu đề -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="#FFFFFF"
+        android:elevation="4dp">
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/back"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Chọn vị trí làm việc"
+            android:textSize="18sp"
+            android:textColor="#000" />
+    </LinearLayout>
+
+    <!-- Thanh tìm kiếm -->
+    <EditText
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/header"
+        android:layout_margin="16dp"
+        android:hint="Nhập địa chỉ hoặc chọn vị trí trên bản đồ"
+        android:background="@drawable/rounded_edittext"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="8dp"
+        android:padding="12dp" />
+
+    <!-- Fragment chứa bản đồ -->
+    <fragment
+        android:id="@+id/mapView"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_bar" />
+
+    <!-- Nút xác nhận -->
+    <Button
+        android:id="@+id/select_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/button"
+        android:text="Chọn vị trí này"
+        android:textColor="#FFFFFF"
+        android:enabled="false" />
+</RelativeLayout>

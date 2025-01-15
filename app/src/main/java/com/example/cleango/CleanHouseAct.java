@@ -7,10 +7,13 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.database.Cursor;
 import androidx.cardview.widget.CardView;
 import android.util.Log;
 import java.text.DecimalFormat;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.DecimalFormat;  // Thêm import cho DecimalFormat
@@ -26,6 +29,18 @@ public class CleanHouseAct extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.clean_house);
+
+        TextView address = findViewById(R.id.address);
+        ImageView arrowDown = findViewById(R.id.arrow_down);
+        View.OnClickListener showAddressPopup = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showAddressDialog();
+            }
+        };
+        // Gán sự kiện click cho cả hai thành phần
+        address.setOnClickListener(showAddressPopup);
+        arrowDown.setOnClickListener(showAddressPopup);
         Button btnNext = findViewById(R.id.btnNext);
         layoutDichVu = findViewById(R.id.layoutDichVu); // Khởi tạo layout chứa các CardView
         dataDichVu = new Data_DichVu(this);  // Khởi tạo đối tượng Data_DichVu để truy xuất dữ liệu
@@ -122,4 +137,43 @@ public class CleanHouseAct extends AppCompatActivity {
             cursor.close();
         }
     }
+    private void showAddressDialog() {
+        // Tạo danh sách địa chỉ mẫu
+        String[] addresses = {
+                "190/C4 Ba Tháng Hai Tổ 55 Khu phố 7, Phường...", "Đỗ Xuân, (+84) 0335272389",
+                "Chọn địa chỉ mới"
+        };
+
+        // Tạo AlertDialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Chọn địa chỉ");
+        builder.setItems(addresses, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (which == 0) {
+                    // Người dùng chọn địa chỉ đầu tiên
+                    // Thực hiện hành động nào đó nếu cần
+                } else if (which == 1) {
+                    // Người dùng chọn địa chỉ thứ hai
+                    // Thực hiện hành động nào đó nếu cần
+                } else if (which == 2) {
+                    // Người dùng chọn "Chọn địa chỉ mới"
+                    Intent intent = new Intent(CleanHouseAct.this, SelectLocationActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
+
+        // Thêm nút "Hủy" để đóng dialog
+        builder.setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        // Hiển thị dialog
+        builder.create().show();
+    }
+
 }

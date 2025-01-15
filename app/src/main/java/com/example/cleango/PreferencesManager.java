@@ -40,7 +40,9 @@ public class PreferencesManager {
     public String getRole() {
         return sharedPreferences.getString(KEY_ROLE, null);
     }
-
+    public void clearData() {
+        sharedPreferences.edit().clear().apply();
+    }
     public void clearPreferences() {
         editor.clear();
         editor.apply();

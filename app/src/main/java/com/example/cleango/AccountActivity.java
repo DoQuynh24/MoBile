@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AccountActivity extends AppCompatActivity {
@@ -26,6 +28,7 @@ public class AccountActivity extends AppCompatActivity {
         ImageButton btnHistory = findViewById(R.id.btnHistory);
         ImageButton btnSupport = findViewById(R.id.btnSupport);
         TextView btnInfor = findViewById(R.id.btnInfor);
+        TextView btnLogOut = findViewById(R.id.btnLogOut);
 
         // Xử lý sự kiện click cho btnHome (trở về trang chính)
         btnHome.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +63,31 @@ public class AccountActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(AccountActivity.this, InforActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        // Ánh xạ nút Đăng xuất
+        btnLogOut = findViewById(R.id.btnLogOut);
+
+        // Xử lý sự kiện click Đăng xuất
+        btnLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Hiển thị hộp thoại xác nhận
+                new AlertDialog.Builder(AccountActivity.this)
+                        .setTitle("Xác nhận")
+                        .setMessage("Bạn có chắc chắn muốn đăng xuất không?")
+                        .setPositiveButton("Có", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // Chuyển sang acc.xml
+                                Intent intent = new Intent(AccountActivity.this, AccActivity.class); // Đảm bảo bạn đã có AccActivity
+                                startActivity(intent);
+                                finish(); // Đóng màn hình hiện tại
+                            }
+                        })
+                        .setNegativeButton("Không", null)
+                        .show();
             }
         });
     }

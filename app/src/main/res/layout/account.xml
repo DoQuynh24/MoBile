@@ -419,7 +419,8 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:contentDescription="Icon"
-                        android:src="@drawable/help" />
+                        android:src="@drawable/help"
+                        />
 
                     <TextView
                         android:layout_width="0dp"
@@ -536,6 +537,51 @@
                         android:layout_height="18dp"
                         android:contentDescription="Arrow"
                         android:src="@drawable/arrow" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E0E0E0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#E0E0E0" />
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="Icon"
+                        android:src="@drawable/logout" />
+
+                    <TextView
+                        android:id="@+id/btnLogOut"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_weight="1"
+                        android:text="Đăng xuất"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 
