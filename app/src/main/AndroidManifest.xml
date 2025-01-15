@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,29 +16,37 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cleango"
         tools:targetApi="31">
+
+        <!-- Khai báo API Key duy nhất -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="YOUR_API_KEY" />
+
+        <!-- MainActivity có intent-filter nên cần android:exported -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".WorkPackageActivity" />
-        <activity android:name=".WorkRepeatActivity" />
-        <activity android:name=".WorkWaitingActivity" />
-        <activity android:name=".MessChatActivity" />
-        <activity android:name=".AccountActivity" />
-        <activity android:name=".MessNewsActivity" />
-        <activity android:name=".ConfirmActivity" />
-        <activity android:name=".CleanHouseAct" />
-        <activity android:name=".CleanHouse1Act" />
-        <activity android:name=".HomeCleanhouseActivity" />
-        <activity android:name=".AccActivity" />
-        <activity android:name=".InforActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity" />
-    </application>
 
+        <!-- Các Activity khác không cần xuất -->
+        <activity android:name=".WorkPackageActivity" android:exported="false" />
+        <activity android:name=".WorkRepeatActivity" android:exported="false" />
+        <activity android:name=".WorkWaitingActivity" android:exported="false" />
+        <activity android:name=".MessChatActivity" android:exported="false" />
+        <activity android:name=".AccountActivity" android:exported="false" />
+        <activity android:name=".MessNewsActivity" android:exported="false" />
+        <activity android:name=".ConfirmActivity" android:exported="false" />
+        <activity android:name=".CleanHouseAct" android:exported="false" />
+        <activity android:name=".CleanHouse1Act" android:exported="false" />
+        <activity android:name=".HomeCleanhouseActivity" android:exported="false" />
+        <activity android:name=".AccActivity" android:exported="false" />
+        <activity android:name=".InforActivity" android:exported="false" />
+        <activity android:name=".LoginActivity" android:exported="false" />
+        <activity android:name=".RegisterActivity" android:exported="false" />
+        <activity android:name=".SelectLocationActivity" android:exported="false" />
+    </application>
 </manifest>

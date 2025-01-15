@@ -148,6 +148,7 @@
             </LinearLayout>
 
             <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:scrollbars="none"
@@ -159,6 +160,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
+                        android:id="@+id/baner1"
                         android:layout_width="320dp"
                         android:layout_height="130dp"
                         android:layout_marginLeft="10dp"
@@ -167,6 +169,7 @@
                         android:src="@drawable/img_10" />
 
                     <ImageView
+                        android:id="@+id/baner2"
                         android:layout_width="320dp"
                         android:layout_height="130dp"
                         android:layout_marginLeft="10dp"

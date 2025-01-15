@@ -473,24 +473,28 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:background="#43D0ECF4">
+        android:background="@color/button">
 
+        <!-- TextView hiển thị giá -->
         <TextView
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:text="278,000 VND"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="16dp" />
-
-        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#4CAF50"
+            android:text="278,000 VND/2h"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="16dp" />
+        /
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#4CAF50"
             android:textSize="16sp"
             android:text="Đăng việc"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:textAlignment="viewEnd"/>
     </LinearLayout>
 
 </LinearLayout>
