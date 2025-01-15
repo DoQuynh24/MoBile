@@ -109,12 +109,13 @@
             android:text="Bạn chưa có tài khoản?" />
 
         <TextView
+            android:id="@+id/btnRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
             android:text=" Tạo tài khoản"
             android:textColor="#126A6B"
-            android:textStyle="bold"
-            android:layout_marginStart="4dp" />
+            android:textStyle="bold" />
     </LinearLayout>
 
     <TextView

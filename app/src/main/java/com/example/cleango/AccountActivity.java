@@ -13,6 +13,14 @@ public class AccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.account);
 
+        PreferencesManager preferencesManager = PreferencesManager.getInstance(this);
+        String hoTen = preferencesManager.getHoTen();
+
+        // Hiển thị tên người dùng vào TextView
+        TextView tvHello = findViewById(R.id.appName);
+        if (hoTen != null) {
+            tvHello.setText(hoTen);
+        }
         // Gán các nút với ID trong layout
         ImageButton btnHome = findViewById(R.id.btnHome);
         ImageButton btnHistory = findViewById(R.id.btnHistory);

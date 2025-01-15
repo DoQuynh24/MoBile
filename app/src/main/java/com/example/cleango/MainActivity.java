@@ -5,8 +5,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,8 +20,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+        PreferencesManager preferencesManager = PreferencesManager.getInstance(this);
+        String hoTen = preferencesManager.getHoTen();
+
+        // Hiển thị tên người dùng vào TextView
+        TextView tvHello = findViewById(R.id.appName);
+        if (hoTen != null) {
+            tvHello.setText("Xin chào " + hoTen);
+        }
         // Gán các ImageView bằng ID
-        ImageView imgCleaningService = findViewById(R.id.img_cleaning_service); // Thay thế ID tương ứng
+        ImageView imgCleaningService = findViewById(R.id.img_cleaning_service);
         ImageView imgCookingService = findViewById(R.id.img_cooking_service);
         ImageView imgLaundryService = findViewById(R.id.img_laundry_service);
         ImageView imgBabysittingService = findViewById(R.id.img_babysitting_service);
@@ -74,5 +87,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 }

@@ -35,6 +35,10 @@
         <activity android:name=".InforActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".CollabActivity" />
+        <activity android:name=".DangKy" />
+
     </application>
 
 </manifest>

@@ -60,15 +60,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="#43D0ECF4"
                 android:layout_marginTop="15dp"
+                android:background="#45D0ECF4"
+                android:orientation="vertical"
                 android:padding="8dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="22dp"
                         android:layout_height="24dp"
@@ -79,14 +80,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:ellipsize="end"
                         android:paddingStart="8dp"
                         android:singleLine="true"
                         android:text="Xóm 3 Đông Nhân"
                         android:textColor="#000000"
                         android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:layout_gravity="center_vertical" />
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -94,18 +95,19 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
                     android:ellipsize="end"
                     android:singleLine="true"
                     android:text="Xóm 3, Đông Nhân, Đông La, Hoài Đức, Hà Nội"
                     android:textColor="#000000"
-                    android:layout_marginStart="30dp"
                     android:textSize="14sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="15dp">
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="22dp"
                         android:layout_height="30dp"
@@ -115,24 +117,26 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:ellipsize="end"
                         android:paddingStart="8dp"
                         android:singleLine="true"
-                        android:text="Chi tiết địa chỉ"
+                        android:text="Ghi chú cho Cleango"
                         android:textColor="#000000"
                         android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:layout_gravity="center_vertical" />
+                        android:textStyle="bold" />
                 </LinearLayout>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
                     android:ellipsize="end"
                     android:singleLine="true"
                     android:text="268B/ ngõ 2004"
                     android:textColor="#000000"
-                    android:layout_marginStart="30dp"
                     android:textSize="14sp" />
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -142,8 +146,9 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp">
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="22dp"
                         android:layout_height="28dp"
@@ -153,14 +158,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:ellipsize="end"
                         android:paddingStart="8dp"
                         android:singleLine="true"
                         android:text="Quỳnh Đỗ"
                         android:textColor="#000000"
                         android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:layout_gravity="center_vertical" />
+                        android:textStyle="bold" />
                     <!-- View rỗng để đẩy nút menu sang phải -->
                     <View
                         android:layout_width="0dp"
@@ -171,19 +176,20 @@
                         android:id="@+id/imgChange"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@drawable/note"
                         android:layout_gravity="center_vertical"
                         android:clickable="true"
-                        android:focusable="true" />
+                        android:focusable="true"
+                        android:src="@drawable/note" />
                 </LinearLayout>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
                     android:ellipsize="end"
                     android:singleLine="true"
                     android:text="(+84) 0364554001"
                     android:textColor="#000000"
-                    android:layout_marginStart="30dp"
                     android:textSize="14sp" />
             </LinearLayout>
             <!-- THÔNG TIN CÔNG VIỆC -->

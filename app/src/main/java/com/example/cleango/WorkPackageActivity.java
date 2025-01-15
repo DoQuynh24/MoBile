@@ -13,6 +13,7 @@ public class WorkPackageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.work_package);
+
         // Gán các TextView tab bằng ID
         TextView tabWaiting = findViewById(R.id.tab_waiting);
         TextView tabRepeat = findViewById(R.id.tab_repeat);

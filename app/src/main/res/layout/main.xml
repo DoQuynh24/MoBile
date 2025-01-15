@@ -48,7 +48,6 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/appName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
@@ -58,10 +57,11 @@
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/appName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
-                            android:text="Xin chào Quỳnh Đỗ"
+                            android:text="Xin chào ABCDEF"
                             android:textColor="#255232"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -260,6 +260,7 @@
                     android:background="#1B9ACAD7"
                     android:orientation="horizontal">
 
+                    <!-- LinearLayout cho Dọn nhà -->
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -267,12 +268,25 @@
                         android:orientation="vertical"
                         android:padding="16dp">
 
-                        <ImageView
-                            android:id="@+id/img_cleaning_service"
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:contentDescription="Cleaning Service"
-                            android:src="@drawable/img" />
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/img_cleaning_service"
+                                android:layout_width="64dp"
+                                android:layout_height="64dp"
+                                android:contentDescription="Cleaning Service"
+                                android:src="@drawable/img" />
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="top|end"
+                                android:layout_marginLeft="45dp"
+                                android:src="@drawable/tet" />
+                        </FrameLayout>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -290,13 +304,22 @@
                         android:gravity="center"
                         android:orientation="vertical"
                         android:padding="16dp">
-
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
                         <ImageView
                             android:id="@+id/img_cooking_service"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
                             android:contentDescription="Cooking Service"
                             android:src="@drawable/img_1" />
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="top|end"
+                                android:layout_marginLeft="45dp"
+                                android:src="@drawable/tet" />
+                        </FrameLayout>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -307,20 +330,28 @@
                             android:textSize="13sp" />
                     </LinearLayout>
 
-
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:orientation="vertical"
                         android:padding="16dp">
-
-                        <ImageView
-                            android:id="@+id/img_laundry_service"
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:contentDescription="Laundry Service"
-                            android:src="@drawable/img_2" />
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/img_laundry_service"
+                                android:layout_width="64dp"
+                                android:layout_height="64dp"
+                                android:contentDescription="Laundry Service"
+                                android:src="@drawable/img_2" />
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="top|end"
+                                android:layout_marginLeft="45dp"
+                                android:src="@drawable/tet" />
+                        </FrameLayout>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -338,14 +369,22 @@
                         android:gravity="center"
                         android:orientation="vertical"
                         android:padding="16dp">
-
-                        <ImageView
-                            android:id="@+id/img_babysitting_service"
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:contentDescription="Babysitting Service"
-                            android:src="@drawable/img_3" />
-
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/img_babysitting_service"
+                                android:layout_width="64dp"
+                                android:layout_height="64dp"
+                                android:contentDescription="Babysitting Service"
+                                android:src="@drawable/img_3" />
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="top|end"
+                                android:layout_marginLeft="45dp"
+                                android:src="@drawable/tet" />
+                        </FrameLayout>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -362,13 +401,22 @@
                         android:gravity="center"
                         android:orientation="vertical"
                         android:padding="16dp">
-
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/img_air_conditioner_service"
+                                android:layout_width="64dp"
+                                android:layout_height="64dp"
+                                android:contentDescription="Air Conditioner Service"
+                                android:src="@drawable/img_4" />
                         <ImageView
-                            android:id="@+id/img_air_conditioner_service"
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:contentDescription="Air Conditioner Service"
-                            android:src="@drawable/img_4" />
+                            android:layout_width="30dp"
+                            android:layout_height="15dp"
+                            android:layout_gravity="top|end"
+                            android:layout_marginLeft="45dp"
+                            android:src="@drawable/tet" />
+                    </FrameLayout>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -386,13 +434,22 @@
                         android:gravity="center"
                         android:orientation="vertical"
                         android:padding="16dp">
-
-                        <ImageView
-                            android:id="@+id/img_moving_service"
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:contentDescription="Moving Service"
-                            android:src="@drawable/img_5" />
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/img_moving_service"
+                                android:layout_width="64dp"
+                                android:layout_height="64dp"
+                                android:contentDescription="Moving Service"
+                                android:src="@drawable/img_5" />
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="top|end"
+                                android:layout_marginLeft="45dp"
+                                android:src="@drawable/tet" />
+                        </FrameLayout>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -600,10 +657,11 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
                         android:text="Vệ sinh Sofa"
-                        android:textSize="13sp"
+                        android:textAlignment="center"
                         android:textColor="#000"
-                        android:layout_marginTop="8dp" />
+                        android:textSize="13sp" />
 
                 </LinearLayout>
                 <LinearLayout
@@ -623,10 +681,11 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
                         android:text="Tổng vệ sinh"
-                        android:textSize="13sp"
+                        android:textAlignment="center"
                         android:textColor="#000"
-                        android:layout_marginTop="8dp" />
+                        android:textSize="13sp" />
                 </LinearLayout>
             </GridLayout>
             <LinearLayout
