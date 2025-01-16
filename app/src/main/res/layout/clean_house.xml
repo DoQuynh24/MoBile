@@ -28,7 +28,7 @@
             <ImageView
                 android:layout_width="22dp"
                 android:layout_height="24dp"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="50dp"
                 android:contentDescription="Icon"
                 android:src="@drawable/location" />
 
@@ -45,18 +45,6 @@
                 android:textSize="14sp"
                 android:layout_gravity="center_vertical" />
 
-            <!-- Mũi tên xuống -->
-            <ImageView
-                android:id="@+id/arrow_down"
-                android:layout_width="10dp"
-                android:layout_height="22dp"
-                android:layout_marginStart="3dp"
-                android:src="@drawable/down"
-                android:contentDescription="Dropdown"
-                android:padding="0dp"
-                android:layout_gravity="center_vertical"
-                android:clickable="true"
-                android:focusable="true" />
 
             <!-- View rỗng để đẩy nút menu sang phải -->
             <View
@@ -74,7 +62,8 @@
         </LinearLayout>
 
         <!-- Địa chỉ phụ -->
-        <TextView
+        <EditText
+            android:id="@+id/etAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
@@ -82,8 +71,8 @@
             android:text="Xóm 3, Đông Nhân, Đông La, Hoài Đức"
             android:textColor="#000000"
             android:textStyle="bold"
-            android:layout_marginStart="80dp"
             android:textSize="14sp" />
+
     </LinearLayout>
 
     <ScrollView
@@ -120,63 +109,7 @@
 
                 android:layout_marginTop="16dp"
                 android:orientation="vertical">
-
-<!--                <androidx.cardview.widget.CardView-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginBottom="12dp"-->
-<!--                    android:backgroundTint="#E8F5E9"-->
-<!--                    android:clickable="true"-->
-<!--                    android:focusable="true">-->
-
-<!--                    <TextView-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:fontFamily="sans-serif-medium"-->
-<!--                        android:padding="16dp"-->
-<!--                        android:text="2 giờ: Tối đa 55m² hoặc 2 phòng"-->
-<!--                        android:textColor="#388E3C"-->
-<!--                        android:textSize="15sp" />-->
-<!--                </androidx.cardview.widget.CardView>-->
-
-<!--                <androidx.cardview.widget.CardView-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginBottom="12dp"-->
-<!--                    android:backgroundTint="#FFEBEE"-->
-<!--                    android:clickable="true"-->
-<!--                    android:focusable="true">-->
-
-<!--                    <TextView-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:fontFamily="sans-serif-medium"-->
-<!--                        android:padding="16dp"-->
-<!--                        android:text="3 giờ: Tối đa 85m² hoặc 3 phòng"-->
-<!--                        android:textColor="#D32F2F"-->
-<!--                        android:textSize="15sp" />-->
-<!--                </androidx.cardview.widget.CardView>-->
-
-<!--                <androidx.cardview.widget.CardView-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:backgroundTint="#E3F2FD"-->
-<!--                    android:clickable="true"-->
-<!--                    android:focusable="true">-->
-
-<!--                    <TextView-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:fontFamily="sans-serif-medium"-->
-<!--                        android:padding="16dp"-->
-<!--                        android:text="4 giờ: Tối đa 105m² hoặc 4 phòng"-->
-<!--                        android:textColor="#1976D2"-->
-<!--                        android:textSize="15sp" />-->
-<!--                </androidx.cardview.widget.CardView>-->
-
             </LinearLayout>
-
-
             <TextView
                 android:id="@+id/TVS"
                 android:layout_width="wrap_content"
@@ -216,7 +149,6 @@
                     android:textSize="15sp"
                     android:layout_weight="1" />
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

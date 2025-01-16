@@ -86,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         };
-
         imgCleaningService.setOnClickListener(navigateToConfirm);
         imgCookingService.setOnClickListener(navigateToConfirm);
         imgLaundryService.setOnClickListener(navigateToConfirm);

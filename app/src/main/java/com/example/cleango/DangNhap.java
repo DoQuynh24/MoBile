@@ -70,14 +70,21 @@ public class DangNhap extends AppCompatActivity {
                     }
                     cursor.close();
                 }
-
                 if (hoTen != null) {
                     PreferencesManager preferencesManager = PreferencesManager.getInstance(DangNhap.this);
                     preferencesManager.saveHoTen(hoTen);
                     preferencesManager.saveRole(vaiTro);
 
-                    // Chuyển sang MainActivity sau khi đăng nhập thành công
-                    Intent intent = new Intent(DangNhap.this, MainActivity.class);
+                    // Chuyển hướng dựa trên vai trò
+                    Intent intent;
+                    if ("Thành viên".equals(vaiTro)) {
+                        intent = new Intent(DangNhap.this, MainActivity.class); // Thành viên
+                    } else if ("Cộng tác viên".equals(vaiTro)) {
+                        intent = new Intent(DangNhap.this, MainCtvActivity.class); // Cộng tác viên
+                    } else {
+                        Toast.makeText(DangNhap.this, "Vai trò không hợp lệ!", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
                     startActivity(intent);
                     finish();
                 } else {

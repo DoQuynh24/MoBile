@@ -33,10 +33,21 @@ public class WorkRepeatActivity extends AppCompatActivity{
                 startActivity(intent);
             }
         });
+        // Xử lý sự kiện click cho btnHome
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(WorkRepeatActivity.this, MainActivity.class);
+                PreferencesManager preferencesManager = PreferencesManager.getInstance(WorkRepeatActivity.this);
+                String role = preferencesManager.getRole(); // Lấy vai trò từ SharedPreferences
+
+                Intent intent;
+                if ("Cộng tác viên".equals(role)) {
+                    intent = new Intent(WorkRepeatActivity.this, MainCtvActivity.class); // Chuyển đến MainCtvActivity nếu là Cộng tác viên
+                } else if ("Thành viên".equals(role)) {
+                    intent = new Intent(WorkRepeatActivity.this, MainActivity.class); // Chuyển đến MainActivity nếu là Thành viên
+                } else {
+                    intent = new Intent(WorkRepeatActivity.this, MainActivity.class);
+                }
                 startActivity(intent);
             }
         });
@@ -48,11 +59,16 @@ public class WorkRepeatActivity extends AppCompatActivity{
                 startActivity(intent);
             }
         });
-        btnProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Chuyển đến account.xml
+        PreferencesManager preferencesManager = PreferencesManager.getInstance(this);
+        String hoTen = preferencesManager.getHoTen();
+        btnProfile.setOnClickListener(v -> {
+            if (hoTen != null) {
+                // Nếu đã đăng nhập, chuyển sang AccountActivity
                 Intent intent = new Intent(WorkRepeatActivity.this, AccountActivity.class);
+                startActivity(intent);
+            } else {
+                // Nếu chưa đăng nhập, chuyển sang AccActivity
+                Intent intent = new Intent(WorkRepeatActivity.this, AccActivity.class);
                 startActivity(intent);
             }
         });

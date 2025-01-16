@@ -3,16 +3,21 @@ package com.example.cleango;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.EditText;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.database.Cursor;
+import android.text.Editable;
+import android.text.TextWatcher;
+import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import android.util.Log;
 import java.text.DecimalFormat;
-import android.app.AlertDialog;
+
 import android.content.DialogInterface;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,23 +34,10 @@ public class CleanHouseAct extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.clean_house);
-
-        TextView address = findViewById(R.id.address);
-        ImageView arrowDown = findViewById(R.id.arrow_down);
-        View.OnClickListener showAddressPopup = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showAddressDialog();
-            }
-        };
-        // Gán sự kiện click cho cả hai thành phần
-        address.setOnClickListener(showAddressPopup);
-        arrowDown.setOnClickListener(showAddressPopup);
         Button btnNext = findViewById(R.id.btnNext);
         layoutDichVu = findViewById(R.id.layoutDichVu); // Khởi tạo layout chứa các CardView
         dataDichVu = new Data_DichVu(this);  // Khởi tạo đối tượng Data_DichVu để truy xuất dữ liệu
         tvGiaTien = findViewById(R.id.tv_giaTien); // Khởi tạo TextView để hiển thị giá
-
         dataDichVu.addDichVuDonNha(this); // Gọi phương thức thêm dịch vụ Dọn nhà
 
         int soLuongDichVu = dataDichVu.getSoLuongDichVu();
@@ -62,8 +54,39 @@ public class CleanHouseAct extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
+        EditText etAddress = findViewById(R.id.etAddress); // Tìm EditText
+        TextView address = findViewById(R.id.address); // Tìm TextView
+        // Thêm TextWatcher để theo dõi thay đổi văn bản trong EditText
+        etAddress.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // Không cần xử lý trước khi thay đổi văn bản
+            }
 
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // Lấy chuỗi từ EditText và tách thành mảng từ
+                String inputText = s.toString();
+                String[] words = inputText.split("\\s+"); // Tách các từ theo dấu cách
+
+                // Kiểm tra nếu số từ lớn hơn 4, chỉ lấy 4 từ đầu tiên
+                if (words.length > 4) {
+                    StringBuilder firstFourWords = new StringBuilder();
+                    for (int i = 0; i < 4; i++) {
+                        firstFourWords.append(words[i]).append(" ");
+                    }
+                    address.setText(firstFourWords.toString().trim()); // Cập nhật TextView
+                } else {
+                    address.setText(inputText); // Cập nhật toàn bộ nếu số từ <= 4
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // Không cần xử lý sau khi thay đổi văn bản
+            }
+        });
+    }
     private void loadChiTietDichVu(String tenDichVu) {
         Cursor cursor = dataDichVu.getChiTietDichVuByTen(tenDichVu);
 
@@ -137,43 +160,4 @@ public class CleanHouseAct extends AppCompatActivity {
             cursor.close();
         }
     }
-    private void showAddressDialog() {
-        // Tạo danh sách địa chỉ mẫu
-        String[] addresses = {
-                "190/C4 Ba Tháng Hai Tổ 55 Khu phố 7, Phường...", "Đỗ Xuân, (+84) 0335272389",
-                "Chọn địa chỉ mới"
-        };
-
-        // Tạo AlertDialog
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Chọn địa chỉ");
-        builder.setItems(addresses, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                if (which == 0) {
-                    // Người dùng chọn địa chỉ đầu tiên
-                    // Thực hiện hành động nào đó nếu cần
-                } else if (which == 1) {
-                    // Người dùng chọn địa chỉ thứ hai
-                    // Thực hiện hành động nào đó nếu cần
-                } else if (which == 2) {
-                    // Người dùng chọn "Chọn địa chỉ mới"
-                    Intent intent = new Intent(CleanHouseAct.this, SelectLocationActivity.class);
-                    startActivity(intent);
-                }
-            }
-        });
-
-        // Thêm nút "Hủy" để đóng dialog
-        builder.setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-
-        // Hiển thị dialog
-        builder.create().show();
-    }
-
 }

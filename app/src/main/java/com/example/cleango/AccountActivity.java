@@ -30,15 +30,25 @@ public class AccountActivity extends AppCompatActivity {
         TextView btnInfor = findViewById(R.id.btnInfor);
         TextView btnLogOut = findViewById(R.id.btnLogOut);
 
-        // Xử lý sự kiện click cho btnHome (trở về trang chính)
+        // Xử lý sự kiện click cho btnHome
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AccountActivity.this, MainActivity.class);
+                PreferencesManager preferencesManager = PreferencesManager.getInstance(AccountActivity.this);
+                String role = preferencesManager.getRole(); // Lấy vai trò từ SharedPreferences
+
+                Intent intent;
+                if ("Cộng tác viên".equals(role)) {
+                    intent = new Intent(AccountActivity.this, MainCtvActivity.class); // Chuyển đến MainCtvActivity nếu là Cộng tác viên
+                } else if ("Thành viên".equals(role)) {
+                    intent = new Intent(AccountActivity.this, MainActivity.class); // Chuyển đến MainActivity nếu là Thành viên
+                } else {
+                    // Nếu vai trò không hợp lệ, có thể hiển thị thông báo lỗi hoặc không làm gì
+                    return;
+                }
                 startActivity(intent);
             }
         });
-
         // Xử lý sự kiện click cho btnHistory (chuyển đến work_package.xml)
         btnHistory.setOnClickListener(new View.OnClickListener() {
             @Override

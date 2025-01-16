@@ -22,7 +22,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="YOUR_API_KEY" />
 
-        <!-- MainActivity có intent-filter nên cần android:exported -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -43,10 +42,11 @@
         <activity android:name=".HomeCleanhouseActivity" />
         <activity android:name=".AccActivity" />
         <activity android:name=".InforActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity" />
         <activity android:name=".CollabActivity" />
         <activity android:name=".DangKy" />
         <activity android:name=".DangNhap" />
+        <activity android:name=".MainCtvActivity" />
+        <activity android:name=".MainCtvWorkActivity" />
+        <activity android:name=".CtvWelfActivity" />
     </application>
 </manifest>

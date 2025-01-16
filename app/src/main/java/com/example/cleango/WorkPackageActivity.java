@@ -52,11 +52,16 @@ public class WorkPackageActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        btnProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Chuyển đến account.xml
+        PreferencesManager preferencesManager = PreferencesManager.getInstance(this);
+        String hoTen = preferencesManager.getHoTen();
+        btnProfile.setOnClickListener(v -> {
+            if (hoTen != null) {
+                // Nếu đã đăng nhập, chuyển sang AccountActivity
                 Intent intent = new Intent(WorkPackageActivity.this, AccountActivity.class);
+                startActivity(intent);
+            } else {
+                // Nếu chưa đăng nhập, chuyển sang AccActivity
+                Intent intent = new Intent(WorkPackageActivity.this, AccActivity.class);
                 startActivity(intent);
             }
         });
