@@ -135,6 +135,7 @@
                             android:orientation="horizontal">
 
                             <TextView
+                                android:id="@+id/tvJobTitile"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -192,6 +193,7 @@
                             android:textSize="14sp" />
 
                         <TextView
+                            android:id="@+id/tvJobTime"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="10:00"
@@ -200,6 +202,7 @@
                             android:textSize="14sp" />
 
                         <TextView
+                            android:id="@+id/tvJobDate"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="17/01/2025"
@@ -225,6 +228,7 @@
                             android:textSize="14sp" />
 
                         <TextView
+                            android:id="@+id/tvJobDuration"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="4 giờ"
@@ -250,6 +254,7 @@
                             android:textSize="14sp" />
 
                         <TextView
+                            android:id="@+id/tvJobPrice"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="640.000 VND"
@@ -314,6 +319,7 @@
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/tvJobAddress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
@@ -364,6 +370,7 @@
                             android:orientation="horizontal">
 
                             <TextView
+                                android:id="@+id/tvJobTT1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -373,6 +380,7 @@
                                 android:textStyle="bold" />
 
                             <Button
+                                android:id="@+id/btnNhanViec2"
                                 android:layout_width="70dp"
                                 android:layout_height="30dp"
                                 android:backgroundTint="#4CAF50"
@@ -423,6 +431,7 @@
                             android:textSize="14sp" />
 
                         <TextView
+                            android:id="@+id/tcTime1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="08:00"
@@ -431,9 +440,10 @@
                             android:textSize="14sp" />
 
                         <TextView
+                            android:id="@+id/tvDate1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Ngày mai"
+                            android:text="14/01/2025"
                             android:textAlignment="center"
                             android:textColor="#000000"
                             android:textSize="14sp" />
@@ -456,6 +466,7 @@
                             android:textSize="14sp" />
 
                         <TextView
+                            android:id="@+id/tvH1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="5 tiếng"
@@ -481,6 +492,7 @@
                             android:textSize="14sp" />
 
                         <TextView
+                            android:id="@+id/tvPrice1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="200.000 ND"
@@ -545,6 +557,7 @@
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/tvAddress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"

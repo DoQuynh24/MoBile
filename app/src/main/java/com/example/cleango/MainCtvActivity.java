@@ -80,5 +80,38 @@ public class MainCtvActivity extends AppCompatActivity{
                 startActivity(intent);
             }
         });
+        Button btnNhanViec2 = findViewById(R.id.btnNhanViec2); // Nút "Nhận việc" thứ hai
+
+        btnNhanViec2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Lấy thông tin từ các TextView trong LinearLayout
+                TextView tvJobTitle = findViewById(R.id.tvJobTT1);
+                TextView tvTime = findViewById(R.id.tcTime1);
+                TextView tvDate = findViewById(R.id.tvDate1);
+                TextView tvDuration = findViewById(R.id.tvH1);
+                TextView tvPrice = findViewById(R.id.tvPrice1);
+                TextView tvAddress = findViewById(R.id.tvAddress);
+
+                // Lấy giá trị của các thành phần
+                String jobTitle = tvJobTitle.getText().toString();
+                String jobTime = tvTime.getText().toString();
+                String jobDate = tvDate.getText().toString();
+                String jobDuration = tvDuration.getText().toString();
+                String jobPrice = tvPrice.getText().toString();
+                String jobAddress = tvAddress.getText().toString();
+
+                // Chuyển dữ liệu sang MainCtvWorkActivity
+                Intent intent = new Intent(MainCtvActivity.this, MainCtvWorkActivity.class);
+                intent.putExtra("job_title", jobTitle);
+                intent.putExtra("job_time", jobTime);
+                intent.putExtra("job_date", jobDate);
+                intent.putExtra("job_duration", jobDuration);
+                intent.putExtra("job_price", jobPrice);
+                intent.putExtra("job_address", jobAddress);
+                startActivity(intent);
+            }
+        });
+
     }
 }

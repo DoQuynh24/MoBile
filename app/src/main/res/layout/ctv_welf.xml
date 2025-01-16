@@ -44,14 +44,37 @@
             android:orientation="vertical"
             android:padding="16dp"
             android:background="#FFEBEE">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tổng thu nhập"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#D32F2F" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Thưởng tháng"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#D32F2F" />
+                <!-- View giãn cách -->
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <!-- TextView bên phải -->
+                <TextView
+                    android:id="@+id/btnThuNhap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="918.000 VND"
+                    android:textSize="13sp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#4CAF50"
+                    android:layout_marginEnd="10dp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
 
             <ProgressBar
                 android:layout_width="match_parent"

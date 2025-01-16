@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tvPrice1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -7,10 +8,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
         android:background="#FFFFFF"
-        android:elevation="4dp">
+        android:elevation="4dp"
+        android:orientation="horizontal"
+        android:padding="16dp">
 
         <ImageView
             android:id="@+id/logo"
@@ -24,8 +25,8 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginTop="15dp"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
@@ -53,21 +54,21 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#F5F5F5"
         android:orientation="horizontal"
-        android:padding="8dp"
-        android:background="#F5F5F5">
+        android:padding="8dp">
 
         <TextView
             android:id="@+id/Notify"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:padding="8dp"
             android:text="Việc mới"
             android:textColor="#000000"
-            android:textSize="16sp"
-            android:gravity="center"
-            android:background="?attr/selectableItemBackground"
-            android:padding="8dp" />
+            android:textSize="16sp" />
 
         <TextView
             android:layout_width="0dp"
@@ -81,6 +82,7 @@
             android:textSize="16sp"
             android:textStyle="bold" />
     </LinearLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -101,8 +103,8 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="4dp"
-                android:gravity="center"
                 android:background="@color/white"
+                android:gravity="center"
                 android:text="T2"
                 android:textColor="#E75D90"
                 android:textSize="16sp"
@@ -112,8 +114,8 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="4dp"
-                android:gravity="center"
                 android:background="@color/white"
+                android:gravity="center"
                 android:text="T3"
                 android:textColor="#000000"
                 android:textSize="16sp" />
@@ -122,8 +124,8 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="4dp"
-                android:gravity="center"
                 android:background="@color/white"
+                android:gravity="center"
                 android:text="T4"
                 android:textColor="#000000"
                 android:textSize="16sp" />
@@ -132,59 +134,65 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="4dp"
-                android:gravity="center"
                 android:background="@color/white"
+                android:gravity="center"
                 android:text="T5"
                 android:textColor="#000000"
                 android:textSize="16sp" />
+
             <TextView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="4dp"
-                android:gravity="center"
                 android:background="@color/white"
+                android:gravity="center"
                 android:text="T6"
                 android:textColor="#000000"
                 android:textSize="16sp" />
+
             <TextView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="4dp"
-                android:gravity="center"
                 android:background="@color/white"
+                android:gravity="center"
                 android:text="T7"
                 android:textColor="#000000"
                 android:textSize="16sp" />
+
             <TextView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="4dp"
-                android:gravity="center"
                 android:background="@color/white"
+                android:gravity="center"
                 android:text="CN"
                 android:textColor="#000000"
                 android:textSize="16sp" />
         </LinearLayout>
     </HorizontalScrollView>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="#43D0ECF4"
         android:fillViewport="true">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="10dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:background="#FFFFFF"
                 android:elevation="5dp"
                 android:orientation="vertical"
-                android:padding="16dp"
-                android:layout_marginTop="10dp">
+                android:padding="16dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -413,14 +421,15 @@
                     android:layout_marginTop="10dp"
                     android:background="#E0E0E0" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:background="#FFFFFF"
                 android:elevation="5dp"
                 android:orientation="vertical"
-                android:padding="16dp"
-                android:layout_marginTop="10dp">
+                android:padding="16dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -450,6 +459,7 @@
                             android:orientation="horizontal">
 
                             <TextView
+                                android:id="@+id/tvJobTitle1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -509,6 +519,7 @@
                             android:textSize="14sp" />
 
                         <TextView
+                            android:id="@+id/tvJobTime1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="14:00"
@@ -517,6 +528,7 @@
                             android:textSize="14sp" />
 
                         <TextView
+                            android:id="@+id/tvDate1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Ngày mai"
@@ -542,6 +554,7 @@
                             android:textSize="14sp" />
 
                         <TextView
+                            android:id="@+id/tvJobDuration1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="2 tiếng"
@@ -567,6 +580,7 @@
                             android:textSize="14sp" />
 
                         <TextView
+                            android:id="@+id/tvJobPrice1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="278.000 ND"
@@ -631,6 +645,7 @@
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/tvJobAddress1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
@@ -660,29 +675,30 @@
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:src="@drawable/home1"
-            android:contentDescription="Home"
             android:backgroundTint="#FFFFFF"
-            android:scaleType="centerInside" />
+            android:contentDescription="Home"
+            android:scaleType="centerInside"
+            android:src="@drawable/home1" />
 
         <ImageButton
             android:id="@+id/btnHistory"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:src="@drawable/welf"
-            android:contentDescription="History"
             android:backgroundTint="#FFFFFF"
-            android:scaleType="centerInside" />
+            android:contentDescription="History"
+            android:scaleType="centerInside"
+            android:src="@drawable/welf" />
+
         <ImageButton
             android:id="@+id/btnSupport"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:src="@drawable/chat"
-            android:contentDescription="Support"
             android:backgroundTint="#FFFFFF"
-            android:scaleType="centerInside" />
+            android:contentDescription="Support"
+            android:scaleType="centerInside"
+            android:src="@drawable/chat" />
 
         <!-- Profile Button -->
         <ImageButton
@@ -690,9 +706,9 @@
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:src="@drawable/user"
-            android:contentDescription="Profile"
             android:backgroundTint="#FFFFFF"
-            android:scaleType="centerInside" />
+            android:contentDescription="Profile"
+            android:scaleType="centerInside"
+            android:src="@drawable/user" />
     </LinearLayout>
 </LinearLayout>
