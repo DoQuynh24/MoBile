@@ -76,19 +76,130 @@
         android:gravity="center"
         android:orientation="vertical"
         android:padding="16dp">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:background="#FFFFFF">
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/mailbox" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Chưa có tin nhắn nào"
-            android:textColor="#9E9E9E"
-            android:textSize="16sp" />
+                <!-- Một thông báo -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:background="#FAFAFA"
+                    android:layout_marginBottom="8dp"
+                    android:elevation="2dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/logo"
+                        android:contentDescription="Avatar"
+                        android:background="@drawable/circle_background"
+                        android:clipToOutline="true"
+                        android:scaleType="centerCrop"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bui Linh"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mình đến rồi nha. Bạn mở cửa giúp mình với"
+                            android:textSize="13sp"
+                            android:textColor="#757575"
+                            android:layout_marginTop="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="5 phút trước"
+                            android:textSize="11sp"
+                            android:textColor="#9E9E9E"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </LinearLayout>
+                <!-- Một thông báo -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:background="#FAFAFA"
+                    android:layout_marginBottom="8dp"
+                    android:elevation="2dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/user"
+                        android:contentDescription="Avatar"
+                        android:background="@drawable/circle_background"
+                        android:clipToOutline="true"
+                        android:scaleType="centerCrop"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hiếu"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Em cảm ơn chị đã đánh giá 5 sao ạ."
+                            android:textSize="13sp"
+                            android:textColor="#000000"
+                            android:layout_marginTop="4dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="3 ngày trước"
+                            android:textSize="11sp"
+                            android:textColor="#9E9E9E"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
     </LinearLayout>
 
     <LinearLayout

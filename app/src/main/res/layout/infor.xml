@@ -39,6 +39,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/btnUpdate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawablePadding="0dp"
@@ -84,7 +85,7 @@
             </FrameLayout>
 
             <TextView
-                android:id="@+id/tvName"
+                android:id="@+id/appName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Quỳnh Đỗ"
@@ -94,7 +95,7 @@
                 android:layout_marginBottom="8dp" />
 
             <TextView
-                android:id="@+id/tvPhoneNumber"
+                android:id="@+id/tvTaiKhoan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="(+84) 0364554001"
@@ -159,6 +160,7 @@
                         android:src="@drawable/user1" />
 
                     <TextView
+                        android:id="@+id/tvRole"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"

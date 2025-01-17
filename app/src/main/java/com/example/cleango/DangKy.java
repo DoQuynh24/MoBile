@@ -45,7 +45,11 @@ public class DangKy extends AppCompatActivity {
                     Toast.makeText(DangKy.this, "Vui lòng điền đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
+                // Kiểm tra định dạng tài khoản (chỉ số và tối đa 10 số, không có ký tự đặc biệt)
+                if (!taiKhoan.matches("^[0-9]{1,10}$")) {
+                    Toast.makeText(DangKy.this, "Tài khoản chỉ được nhập số và tối đa 10 số, không có ký tự đặc biệt!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 // Lấy vai trò từ RadioGroup
                 String vaiTro = "";
                 int selectedRoleId = roleGroup.getCheckedRadioButtonId();  // Lấy id của RadioButton được chọn

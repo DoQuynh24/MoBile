@@ -43,6 +43,7 @@
         <activity android:name=".AccActivity" />
         <activity android:name=".InforActivity" />
         <activity android:name=".CollabActivity" />
+        <activity android:name=".ConfirmAct" />
         <activity android:name=".DangKy" />
         <activity android:name=".DangNhap" />
         <activity android:name=".MainCtvActivity" />

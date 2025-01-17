@@ -84,7 +84,7 @@
                         android:ellipsize="end"
                         android:paddingStart="8dp"
                         android:singleLine="true"
-                        android:text="Xóm 3 Đông Nhân"
+                        android:text="Địa chỉ"
                         android:textColor="#000000"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -93,12 +93,12 @@
 
                 <!-- Địa chỉ phụ -->
                 <TextView
+                    android:id="@+id/tvDiaChi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:ellipsize="end"
                     android:singleLine="true"
-                    android:text="Xóm 3, Đông Nhân, Đông La, Hoài Đức, Hà Nội"
                     android:textColor="#000000"
                     android:textSize="14sp" />
 
@@ -128,12 +128,12 @@
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/tvGhiChu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:ellipsize="end"
                     android:singleLine="true"
-                    android:text="268B/ ngõ 2004"
                     android:textColor="#000000"
                     android:textSize="14sp" />
 
@@ -156,13 +156,13 @@
                         android:src="@drawable/user1" />
 
                     <TextView
+                        android:id="@+id/appName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:ellipsize="end"
                         android:paddingStart="8dp"
                         android:singleLine="true"
-                        android:text="Quỳnh Đỗ"
                         android:textColor="#000000"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -183,12 +183,13 @@
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/tv_TaiKhoan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:ellipsize="end"
                     android:singleLine="true"
-                    android:text="(+84) 0364554001"
+                    android:text="(+84) "
                     android:textColor="#000000"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -234,8 +235,9 @@
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_weight="1" />
+
                     <TextView
-                        android:id="@+id/tvChosenDate"
+                        android:id="@+id/tvNgayBatDau"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -262,11 +264,11 @@
                         android:layout_height="0dp"
                         android:layout_weight="1" />
                     <TextView
-                        android:id="@+id/tvChosenTime"
+                        android:id="@+id/tvThoiGian"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="2 giờ, 14:00 đến 16:00"
+                        android:text=""
                         android:textColor="#454444"
                         android:textSize="14sp" />
                 </LinearLayout>
@@ -298,11 +300,13 @@
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_weight="1" />
+
                     <TextView
+                        android:id="@+id/tvKhoiLuongCV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="55m² / 2 phòng"
+                        android:text=""
                         android:textColor="#454444"
                         android:textSize="14sp" />
                 </LinearLayout>
@@ -339,13 +343,15 @@
                         android:contentDescription="Money"
                         android:backgroundTint="#FFFFFF"
                         android:scaleType="centerInside" />
+
                     <TextView
+                        android:id="@+id/tvMoney"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tiền mặt"
-                        android:textSize="12sp"
                         android:textAlignment="center"
-                        android:textColor="#000000" />
+                        android:textColor="#000000"
+                        android:textSize="12sp" />
                 </LinearLayout>
 
                 <!-- bPay -->
@@ -363,13 +369,15 @@
                         android:contentDescription="bPay"
                         android:backgroundTint="#FFFFFF"
                         android:scaleType="centerInside" />
+
                     <TextView
+                        android:id="@+id/tvbPay"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="bPay"
-                        android:textSize="12sp"
                         android:textAlignment="center"
-                        android:textColor="#000000" />
+                        android:textColor="#000000"
+                        android:textSize="12sp" />
                 </LinearLayout>
 
                 <!-- Momo -->
@@ -387,13 +395,15 @@
                         android:contentDescription="Momo"
                         android:backgroundTint="#FFFFFF"
                         android:scaleType="centerInside" />
+
                     <TextView
+                        android:id="@+id/tvMomo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Momo"
-                        android:textSize="12sp"
                         android:textAlignment="center"
-                        android:textColor="#000000" />
+                        android:textColor="#000000"
+                        android:textSize="12sp" />
                 </LinearLayout>
 
                 <!-- Zalo -->
@@ -411,13 +421,15 @@
                         android:contentDescription="Zalo"
                         android:backgroundTint="#FFFFFF"
                         android:scaleType="centerInside" />
+
                     <TextView
+                        android:id="@+id/tvZalo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Zalo"
-                        android:textSize="12sp"
                         android:textAlignment="center"
-                        android:textColor="#000000" />
+                        android:textColor="#000000"
+                        android:textSize="12sp" />
                 </LinearLayout>
 
                 <!-- Shopee -->
@@ -435,13 +447,15 @@
                         android:contentDescription="Shopee"
                         android:backgroundTint="#FFFFFF"
                         android:scaleType="centerInside" />
+
                     <TextView
+                        android:id="@+id/tvShopee"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Shopee"
-                        android:textSize="12sp"
                         android:textAlignment="center"
-                        android:textColor="#000000" />
+                        android:textColor="#000000"
+                        android:textSize="12sp" />
                 </LinearLayout>
 
                 <!-- Visa -->
@@ -459,13 +473,15 @@
                         android:contentDescription="Visa"
                         android:backgroundTint="#FFFFFF"
                         android:scaleType="centerInside" />
+
                     <TextView
+                        android:id="@+id/tvVisa"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Visa"
-                        android:textSize="12sp"
                         android:textAlignment="center"
-                        android:textColor="#000000" />
+                        android:textColor="#000000"
+                        android:textSize="12sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -483,24 +499,21 @@
 
         <!-- TextView hiển thị giá -->
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_giaTien"
+            android:layout_width="240dp"
             android:layout_height="wrap_content"
-            android:text="278,000 VND/2h"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"
             android:layout_marginStart="20dp"
-            android:layout_marginEnd="16dp" />
-        /
+            android:layout_marginEnd="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
         <Button
-            android:id="@+id/btnNext"
-            android:layout_width="wrap_content"
+            android:id="@+id/btnPost"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#4CAF50"
             android:textSize="16sp"
-            android:text="Đăng việc"
-            android:layout_weight="1"
-            android:textAlignment="viewEnd"/>
+            android:text="Đăng việc"/>
     </LinearLayout>
 
 </LinearLayout>

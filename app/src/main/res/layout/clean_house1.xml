@@ -70,7 +70,7 @@
                 android:radius="15dp">
 
                 <TextView
-                    android:id="@+id/tvChosenDate"
+                    android:id="@+id/tvNgayBatDau"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Chọn ngày"
@@ -111,7 +111,7 @@
                     android:src="@drawable/time" />
 
                 <TextView
-                    android:id="@+id/tvChosenTime"
+                    android:id="@+id/tvThoiGianBatDau"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Chọn giờ làm"
@@ -168,7 +168,6 @@
                 android:gravity="top|start"
                 android:hint="Bạn có yêu cầu gì thêm, hãy nhập ở đây nhé..."
                 android:inputType="textMultiLine|textCapSentences"
-
                 android:padding="10dp"
                 android:textSize="14sp" />
 
@@ -184,23 +183,21 @@
 
         <!-- TextView hiển thị giá -->
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_giaTien"
+            android:layout_width="240dp"
             android:layout_height="wrap_content"
-            android:text="278,000 VND/2h"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"
             android:layout_marginStart="20dp"
-            android:layout_marginEnd="16dp" />
+            android:layout_marginEnd="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
         <Button
             android:id="@+id/btnNext"
-            android:layout_width="wrap_content"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#4CAF50"
             android:textSize="16sp"
-            android:text="Tiếp theo"
-            android:layout_weight="1"
-            android:textAlignment="viewEnd"/>
+            android:text="Tiếp theo" />
     </LinearLayout>
 
 </LinearLayout>

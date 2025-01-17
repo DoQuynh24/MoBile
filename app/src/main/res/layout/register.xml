@@ -81,8 +81,8 @@
             android:id="@+id/et_TaiKhoan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Số điện thoại hoặc email"
             android:layout_marginTop="8dp"
+            android:hint="Số điện thoại"
             android:textSize="14sp" />
 
         <!-- Password -->

@@ -124,6 +124,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tvTenDichVu"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -133,12 +134,12 @@
                             android:textStyle="bold" />
 
                         <Button
-                            android:layout_width="70dp"
+                            android:layout_width="90dp"
                             android:layout_height="30dp"
                             android:backgroundTint="#4CAF50"
                             android:gravity="center"
                             android:padding="0dp"
-                            android:text="Xác nhận"
+                            android:text="Chờ nhận việc"
                             android:textColor="#FFFFFF"
                             android:textSize="11sp" />
 
@@ -147,7 +148,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Đã đăng 2 giờ trước"
+                        android:text="Vừa xong"
                         android:textColor="#9E9E9E"
                         android:textSize="12sp" />
                 </LinearLayout>
@@ -183,17 +184,19 @@
                         android:textSize="14sp" />
 
                     <TextView
+                        android:id="@+id/tvThoiGianBatDau"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="14:00"
+                        android:text="10:00"
                         android:textAlignment="center"
                         android:textColor="#000000"
                         android:textSize="14sp" />
 
                     <TextView
+                        android:id="@+id/tvNgayBatDau"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Ngày mai"
+                        android:text="17/01/2025"
                         android:textAlignment="center"
                         android:textColor="#000000"
                         android:textSize="14sp" />
@@ -216,9 +219,10 @@
                         android:textSize="14sp" />
 
                     <TextView
+                        android:id="@+id/tvThoiGianHoanThanh"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="2 tiếng"
+                        android:text="4 giờ"
                         android:textAlignment="center"
                         android:textColor="#000000"
                         android:textSize="14sp" />
@@ -241,9 +245,10 @@
                         android:textSize="14sp" />
 
                     <TextView
+                        android:id="@+id/tvGiaTien"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="278.000 ND"
+                        android:text="640.000 VND"
                         android:textAlignment="center"
                         android:textColor="#000000"
                         android:textSize="14sp" />
@@ -264,6 +269,7 @@
                             android:src="@drawable/money" />
 
                         <TextView
+                            android:id="@+id/tvPTTT"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Tiền mặt"
@@ -305,11 +311,12 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/tvDiaChi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
-                android:text="Xóm 3, Đông Nhân, Đông La, Hoài Đức, Hà Nội, Việt Nam"
                 android:textColor="#000000"
+                android:text="Phường Nhân Hòa - Thị xã Mỹ Hào - Tỉnh Hưng Yên"
                 android:textSize="13sp" />
 
             <View
@@ -318,76 +325,76 @@
                 android:layout_marginTop="10dp"
                 android:background="#E0E0E0" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="Người thực hiện công việc"
-                android:textAlignment="center"
-                android:textColor="#5F9EA0"
-                android:textSize="15sp" />
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:text="Người thực hiện công việc"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="#5F9EA0"-->
+<!--                android:textSize="15sp" />-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:gravity="center"
-                android:orientation="vertical">
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="15dp"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical">-->
 
-                <FrameLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+<!--                <FrameLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content">-->
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:background="@drawable/circle_background"
-                        android:clipToOutline="true"
-                        android:contentDescription="Avatar"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/logo" />
+<!--                    <ImageView-->
+<!--                        android:layout_width="80dp"-->
+<!--                        android:layout_height="80dp"-->
+<!--                        android:background="@drawable/circle_background"-->
+<!--                        android:clipToOutline="true"-->
+<!--                        android:contentDescription="Avatar"-->
+<!--                        android:scaleType="centerCrop"-->
+<!--                        android:src="@drawable/logo" />-->
 
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_gravity="bottom|end"
-                        android:contentDescription="Badge"
-                        android:src="@drawable/star" />
-                </FrameLayout>
+<!--                    <ImageView-->
+<!--                        android:layout_width="24dp"-->
+<!--                        android:layout_height="24dp"-->
+<!--                        android:layout_gravity="bottom|end"-->
+<!--                        android:contentDescription="Badge"-->
+<!--                        android:src="@drawable/star" />-->
+<!--                </FrameLayout>-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="?attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="?attr/selectableItemBackground"-->
+<!--                    android:clickable="true"-->
+<!--                    android:gravity="center"-->
+<!--                    android:orientation="horizontal">-->
 
-                    <TextView
-                        android:id="@+id/tvName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:text="Lương Công Hiếu"
-                        android:textColor="#000000"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/tvName"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginLeft="30dp"-->
+<!--                        android:text=" Hiếu"-->
+<!--                        android:textColor="#000000"-->
+<!--                        android:textSize="16sp"-->
+<!--                        android:textStyle="bold" />-->
 
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_marginLeft="8dp"
-                        android:src="@drawable/chat1" />
-                </LinearLayout>
+<!--                    <ImageView-->
+<!--                        android:layout_width="24dp"-->
+<!--                        android:layout_height="24dp"-->
+<!--                        android:layout_marginLeft="8dp"-->
+<!--                        android:src="@drawable/chat1" />-->
+<!--                </LinearLayout>-->
 
-                <TextView
-                    android:id="@+id/tvPhoneNumber"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="(+84) 0987654321"
-                    android:textColor="#555555"
-                    android:textSize="13sp" />
-            </LinearLayout>
+<!--                <TextView-->
+<!--                    android:id="@+id/tvPhoneNumber"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="(+84) 123456789"-->
+<!--                    android:textColor="#555555"-->
+<!--                    android:textSize="13sp" />-->
+<!--            </LinearLayout>-->
         </LinearLayout>
 
     </ScrollView>

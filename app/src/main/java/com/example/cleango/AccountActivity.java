@@ -73,6 +73,7 @@ public class AccountActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(AccountActivity.this, InforActivity.class);
                 startActivity(intent);
+
             }
         });
 

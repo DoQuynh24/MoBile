@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.EditText;
 import android.database.Cursor;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -17,11 +17,12 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import android.util.Log;
 import java.text.DecimalFormat;
-
+import android.text.TextWatcher;
+import android.text.Editable;
 import android.content.DialogInterface;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.text.DecimalFormat;  // Thêm import cho DecimalFormat
+import java.text.DecimalFormat;
 
 public class CleanHouseAct extends AppCompatActivity {
 
@@ -29,7 +30,9 @@ public class CleanHouseAct extends AppCompatActivity {
     private Data_DichVu dataDichVu;     // Đối tượng truy xuất dữ liệu dịch vụ
     private CardView selectedCardView;  // Lưu trữ CardView được chọn
     private TextView tvGiaTien;         // TextView hiển thị giá tiền
-
+    private Button btnNext;
+    private String thoiGianHoanThanh, khoiLuongCV, etAddress;
+    private double giaTien;             // Lưu trữ giá tiền
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,22 +43,11 @@ public class CleanHouseAct extends AppCompatActivity {
         tvGiaTien = findViewById(R.id.tv_giaTien); // Khởi tạo TextView để hiển thị giá
         dataDichVu.addDichVuDonNha(this); // Gọi phương thức thêm dịch vụ Dọn nhà
 
-        int soLuongDichVu = dataDichVu.getSoLuongDichVu();
-        Log.i("SoLuongDichVu", "Số lượng dịch vụ trong bảng DichVu: " + soLuongDichVu);
-
-        String tenDichVu = "Dọn nhà";
-        loadChiTietDichVu(tenDichVu);  // Lấy và hiển thị chi tiết dịch vụ "Dọn nhà"
-        // Xử lý sự kiện click cho nút btnNext
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Chuyển sang CleanHouse1Act với layout clean_house1.xml
-                Intent intent = new Intent(CleanHouseAct.this, CleanHouse1Act.class);
-                startActivity(intent);
-            }
-        });
+        tvGiaTien = findViewById(R.id.tv_giaTien); // Khởi tạo TextView để hiển thị giá
         EditText etAddress = findViewById(R.id.etAddress); // Tìm EditText
         TextView address = findViewById(R.id.address); // Tìm TextView
+        String addressValue = etAddress.getText().toString();
+
         // Thêm TextWatcher để theo dõi thay đổi văn bản trong EditText
         etAddress.addTextChangedListener(new TextWatcher() {
             @Override
@@ -63,6 +55,71 @@ public class CleanHouseAct extends AppCompatActivity {
                 // Không cần xử lý trước khi thay đổi văn bản
             }
 
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // Lấy chuỗi từ EditText và tách thành mảng từ
+                String inputText = s.toString();
+                String[] words = inputText.split("\\s+"); // Tách các từ theo dấu cách
+
+                // Kiểm tra nếu số từ lớn hơn 4, chỉ lấy 4 từ đầu tiên
+                if (words.length > 4) {
+                    StringBuilder firstFourWords = new StringBuilder();
+                    for (int i = 0; i < 4; i++) {
+                        firstFourWords.append(words[i]).append(" ");
+                    }
+                    address.setText(firstFourWords.toString().trim()); // Cập nhật TextView
+                } else {
+                    address.setText(inputText); // Cập nhật toàn bộ nếu số từ <= 4
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // Không cần xử lý sau khi thay đổi văn bản
+            }
+        });
+        int soLuongDichVu = dataDichVu.getSoLuongDichVu();
+        Log.i("SoLuongDichVu", "Số lượng dịch vụ trong bảng DichVu: " + soLuongDichVu);
+
+        String tenDichVu = "Dọn nhà";
+        loadChiTietDichVu(tenDichVu);  // Lấy và hiển thị chi tiết dịch vụ "Dọn nhà"
+
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String addressValue = etAddress.getText().toString();  // Lấy giá trị địa chỉ từ EditText
+
+                if (thoiGianHoanThanh == null || khoiLuongCV == null) {
+                    // Hiển thị thông báo nếu chưa chọn dịch vụ
+                    AlertDialog.Builder builder = new AlertDialog.Builder(CleanHouseAct.this);
+                    builder.setMessage("Vui lòng chọn một dịch vụ trước khi tiếp tục.")
+                            .setPositiveButton("OK", (dialog, which) -> dialog.dismiss())
+                            .create()
+                            .show();
+                } else if (addressValue.isEmpty()) {
+                    // Kiểm tra nếu địa chỉ không được nhập
+                    AlertDialog.Builder builder = new AlertDialog.Builder(CleanHouseAct.this);
+                    builder.setMessage("Vui lòng nhập địa chỉ để tiếp tục.")
+                            .setPositiveButton("OK", (dialog, which) -> dialog.dismiss())
+                            .create()
+                            .show();
+                } else {
+                    // Chuyển sang CleanHouse1Act và truyền giá trị
+                    Intent intent = new Intent(CleanHouseAct.this, CleanHouse1Act.class);
+                    intent.putExtra("thoiGianHoanThanh", thoiGianHoanThanh);
+                    intent.putExtra("khoiLuongCV", khoiLuongCV);
+                    intent.putExtra("giaTien", tvGiaTien.getText().toString()); // Truyền giá trị giaTien
+                    intent.putExtra("address", addressValue); // Truyền địa chỉ
+                    startActivity(intent);
+                }
+            }
+        });
+        // Thêm TextWatcher để theo dõi thay đổi văn bản trong EditText
+        etAddress.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // Không cần xử lý trước khi thay đổi văn bản
+            }
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 // Lấy chuỗi từ EditText và tách thành mảng từ
@@ -97,6 +154,7 @@ public class CleanHouseAct extends AppCompatActivity {
                 int giaTienIndex = cursor.getColumnIndex("GiaTien");
 
                 if (thoiGianHoanThanhIndex >= 0 && khoiLuongCVIndex >= 0 && giaTienIndex >= 0) {
+                    // Không cần final ở đây
                     String thoiGianHoanThanh = cursor.getString(thoiGianHoanThanhIndex);
                     String khoiLuongCV = cursor.getString(khoiLuongCVIndex);
                     final double giaTien = cursor.getDouble(giaTienIndex);
@@ -135,6 +193,10 @@ public class CleanHouseAct extends AppCompatActivity {
 
                         // Cập nhật giá tiền đã định dạng vào TextView
                         tvGiaTien.setText(giaTienFormatted + " VNĐ / " + thoiGianHoanThanh);
+
+                        // Lưu thông tin dịch vụ đã chọn
+                        CleanHouseAct.this.thoiGianHoanThanh = thoiGianHoanThanh;
+                        CleanHouseAct.this.khoiLuongCV = khoiLuongCV;
 
                         // Khôi phục lại màu nền của CardView đã chọn trước đó, nếu có
                         if (selectedCardView != null) {

@@ -21,7 +21,6 @@ public class ConfirmActivity extends AppCompatActivity{
                 // Quay lại MainActivity
                 Intent intent = new Intent(ConfirmActivity.this, CleanHouse1Act.class);
                 startActivity(intent);
-                finish(); // Kết thúc activity hiện tại
             }
         });
     }

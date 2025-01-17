@@ -246,7 +246,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Đã đăng 2 giờ trước"
+                            android:text="1 phút trước"
                             android:textColor="#9E9E9E"
                             android:textSize="12sp" />
                     </LinearLayout>
@@ -284,7 +284,7 @@
                             android:id="@+id/tvJobTime"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="14:00"
+                            android:text="10:00"
                             android:textAlignment="center"
                             android:textColor="#000000"
                             android:textSize="14sp" />
@@ -293,7 +293,7 @@
                             android:id="@+id/tvDate"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Ngày mai"
+                            android:text="17/01/2025"
                             android:textAlignment="center"
                             android:textColor="#000000"
                             android:textSize="14sp" />
@@ -319,7 +319,7 @@
                             android:id="@+id/tvJobDuration"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="2 tiếng"
+                            android:text="4 giờ"
                             android:textAlignment="center"
                             android:textColor="#000000"
                             android:textSize="14sp" />
@@ -345,7 +345,7 @@
                             android:id="@+id/tvJobPrice"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="278.000 ND"
+                            android:text="640.000 VND"
                             android:textAlignment="center"
                             android:textColor="#000000"
                             android:textSize="14sp" />
@@ -411,7 +411,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
-                    android:text="Xóm 3, Đông Nhân, Đông La, Hoài Đức, Hà Nội, Việt Nam"
+                    android:text="Phường Nhân Hòa - Thị xã Mỹ Hào - Tỉnh Hưng Yên"
                     android:textColor="#000000"
                     android:textSize="13sp" />
 

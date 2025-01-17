@@ -6,14 +6,15 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.TextView;
 
 public class Data_DichVu extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "DichVu.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     private static final String TABLE_DICHVU = "DichVu";
     private static final String TABLE_CHITIETDICHVU = "ChiTietDichVu";
-    //private static final String TABLE_DATLICH = "DatLich";
+    private static final String TABLE_DATLICH = "DatLich";
 
     // Các cột bảng DichVu
     private static final String COLUMN_TENDICHVU = "TenDichVu";
@@ -25,17 +26,20 @@ public class Data_DichVu extends SQLiteOpenHelper {
     private static final String COLUMN_GIATIEN = "GiaTien";
 
     // Các cột bảng DatLich
-//    private static final String COLUMN_ID = "ID";
-//    private static final String COLUMN_MA_NGUOIDUNG = "MaNguoiDung";
-//    private static final String COLUMN_DIACHI = "DiaChi";
-//    private static final String COLUMN_HOTEN = "HoTen";
-//    private static final String COLUMN_SDT = "SDT";
-//    private static final String COLUMN_PTTT = "PTTT";
-//    private static final String COLUMN_GHICHU = "GhiChu";
-//    private static final String COLUMN_GIATIENDICHVU = "GiaTien";
-//    private static final String COLUMN_THOIGIANBATDAU = "ThoiGianBatDau";
-//    private static final String COLUMN_THOIGIANLAMVIEC = "ThoiGianHoanThanh";
-//    private static final String COLUMN_NGAYBATDAU = "NgayBatDau";
+    private static final String COLUMN_ID = "ID";
+    private static final String COLUMN_MA_NGUOIDUNG = "MaNguoiDung";
+    private static final String COLUMN_DIACHI = "DiaChi";
+    private static final String COLUMN_HOTEN = "HoTen";
+    private static final String COLUMN_SDT = "SDT";
+    private static final String COLUMN_PTTT = "PTTT";
+    private static final String COLUMN_GHICHU = "GhiChu";
+    private static final String COLUMN_GIATIENDICHVU = "GiaTien";
+    private static final String COLUMN_THOIGIANBATDAU = "ThoiGianBatDau";
+    private static final String COLUMN_THOIGIANLAMVIEC = "ThoiGianHoanThanh";
+    private static final String COLUMN_NGAYBATDAU = "NgayBatDau";
+    private static final String COLUMN_TRANGTHAI = "TrangThai";
+
+
 
     public Data_DichVu(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -57,26 +61,27 @@ public class Data_DichVu extends SQLiteOpenHelper {
                 + "FOREIGN KEY (" + COLUMN_TENDICHVU + ") REFERENCES " + TABLE_DICHVU + "(" + COLUMN_TENDICHVU + "));";
 
         // Tạo bảng DatLich
-//        String createTableDatLich = "CREATE TABLE " + TABLE_DATLICH + " ("
-//                + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-//                + COLUMN_TENDICHVU + " TEXT, "
-//                + COLUMN_MA_NGUOIDUNG + " INTEGER, "
-//                + COLUMN_DIACHI + " TEXT, "
-//                + COLUMN_HOTEN + " TEXT, "
-//                + COLUMN_SDT + " INTEGER, "
-//                + COLUMN_PTTT + " TEXT, "
-//                + COLUMN_GHICHU + " TEXT, "
-//                + COLUMN_GIATIENDICHVU + " REAL, "
-//                + COLUMN_THOIGIANBATDAU + " TEXT, "
-//                + COLUMN_THOIGIANLAMVIEC + " TEXT, "
-//                + COLUMN_NGAYBATDAU + " DATETIME, "
-//                + "FOREIGN KEY (" + COLUMN_TENDICHVU + ") REFERENCES " + TABLE_DICHVU + "(" + COLUMN_TENDICHVU + "), "
-//                + "FOREIGN KEY (" + COLUMN_MA_NGUOIDUNG + ") REFERENCES NguoiDung(MaNguoiDung));";
+        String createTableDatLich = "CREATE TABLE " + TABLE_DATLICH + " ("
+                + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + COLUMN_TENDICHVU + " TEXT, "
+                + COLUMN_MA_NGUOIDUNG + " INTEGER, "
+                + COLUMN_DIACHI + " TEXT, "
+                + COLUMN_HOTEN + " TEXT, "
+                + COLUMN_SDT + " INTEGER, "
+                + COLUMN_PTTT + " TEXT, "
+                + COLUMN_GHICHU + " TEXT, "
+                + COLUMN_GIATIENDICHVU + " REAL, "
+                + COLUMN_THOIGIANBATDAU + " TEXT, "
+                + COLUMN_THOIGIANLAMVIEC + " TEXT, "
+                + COLUMN_NGAYBATDAU + " DATETIME, "
+                + COLUMN_TRANGTHAI + " TEXT, "
+                + "FOREIGN KEY (" + COLUMN_TENDICHVU + ") REFERENCES " + TABLE_DICHVU + "(" + COLUMN_TENDICHVU + "), "
+                + "FOREIGN KEY (" + COLUMN_MA_NGUOIDUNG + ") REFERENCES NguoiDung(MaNguoiDung));";
 
         // Thực thi các câu lệnh SQL để tạo bảng
         db.execSQL(createTableDichVu);
         db.execSQL(createTableChiTietDichVu);
-        //db.execSQL(createTableDatLich);
+        db.execSQL(createTableDatLich);
     }
 
     @Override
@@ -84,9 +89,10 @@ public class Data_DichVu extends SQLiteOpenHelper {
         // Chỉ cần xóa các bảng cũ và tạo lại các bảng mới khi phiên bản thay đổi
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_DICHVU);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_CHITIETDICHVU);
-        //db.execSQL("DROP TABLE IF EXISTS " + TABLE_DATLICH);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_DATLICH);
         onCreate(db);
     }
+
 
     // Thêm dịch vụ
     public boolean addDichVu(String tenDichVu, String moTa) {
@@ -113,24 +119,33 @@ public class Data_DichVu extends SQLiteOpenHelper {
     }
 
     // Thêm đặt lịch
-//    public boolean addDatLich(String tenDichVu, int maNguoiDung, String diaChi, String hoTen, int sdt, String pttt, String ghiChu, double giaTien, String thoiGianBatDau, String thoiGianHoanThanh, String ngayBatDau) {
-//        SQLiteDatabase db = this.getWritableDatabase();
-//        ContentValues values = new ContentValues();
-//        values.put(COLUMN_TENDICHVU, tenDichVu);
-//        values.put(COLUMN_MA_NGUOIDUNG, maNguoiDung);
-//        values.put(COLUMN_DIACHI, diaChi);
-//        values.put(COLUMN_HOTEN, hoTen);
-//        values.put(COLUMN_SDT, sdt);
-//        values.put(COLUMN_PTTT, pttt);
-//        values.put(COLUMN_GHICHU, ghiChu);
-//        values.put(COLUMN_GIATIENDICHVU, giaTien);
-//        values.put(COLUMN_THOIGIANBATDAU, thoiGianBatDau);
-//        values.put(COLUMN_THOIGIANLAMVIEC, thoiGianHoanThanh);
-//        values.put(COLUMN_NGAYBATDAU, ngayBatDau);
-//
-//        long result = db.insert(TABLE_DATLICH, null, values);
-//        return result != -1;
-//    }
+    public boolean addDatLich(String tenDichVu, String maNguoiDung, String diaChi, String hoTen, String sdt, String pttt, String ghiChu, double giaTien, String thoiGianBatDau, String thoiGianHoanThanh, String ngayBatDau) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_TENDICHVU, tenDichVu);
+        values.put(COLUMN_MA_NGUOIDUNG, maNguoiDung); // MaNguoiDung có thể lấy từ PreferencesManager hoặc Intent
+        values.put(COLUMN_DIACHI, diaChi);
+        values.put(COLUMN_HOTEN, hoTen);
+        values.put(COLUMN_SDT, sdt);
+        values.put(COLUMN_PTTT, pttt);
+        values.put(COLUMN_GHICHU, ghiChu);
+        values.put(COLUMN_GIATIENDICHVU, giaTien);
+        values.put(COLUMN_THOIGIANBATDAU, thoiGianBatDau);
+        values.put(COLUMN_THOIGIANLAMVIEC, thoiGianHoanThanh);
+        values.put(COLUMN_NGAYBATDAU, ngayBatDau);
+        values.put(COLUMN_TRANGTHAI, "Chờ nhận việc");
+
+        long result = db.insert(TABLE_DATLICH, null, values);
+        return result != -1;
+    }
+    public boolean updateTrangThai(int id, String trangThai) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_TRANGTHAI, trangThai);
+
+        int rowsAffected = db.update(TABLE_DATLICH, values, COLUMN_ID + "=?", new String[]{String.valueOf(id)});
+        return rowsAffected > 0;
+    }
 
     // Lấy tất cả dịch vụ
     public Cursor getAllDichVu() {
@@ -191,5 +206,64 @@ public class Data_DichVu extends SQLiteOpenHelper {
 
         return count;
     }
+    public Cursor getDatLichById(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + TABLE_DATLICH + " WHERE " + COLUMN_ID + " = ?";
+        return db.rawQuery(query, new String[]{String.valueOf(id)});
+    }
+
+
+    // Phương thức đổ dữ liệu từ cursor vào mảng
+    public String[] loadDatLichToCursor(Cursor cursor) {
+        if (cursor != null && cursor.moveToFirst()) {
+            // Lấy các chỉ số cột từ Cursor
+            int tenDichVuIndex = cursor.getColumnIndex(COLUMN_TENDICHVU);
+            int thoiGianBatDauIndex = cursor.getColumnIndex(COLUMN_THOIGIANBATDAU);
+            int thoiGianHoanThanhIndex = cursor.getColumnIndex(COLUMN_THOIGIANLAMVIEC);
+            int giaTienIndex = cursor.getColumnIndex(COLUMN_GIATIENDICHVU);
+            int diaChiIndex = cursor.getColumnIndex(COLUMN_DIACHI);
+            int ptttIndex = cursor.getColumnIndex(COLUMN_PTTT);
+            int ghiChuIndex = cursor.getColumnIndex(COLUMN_GHICHU);
+            int trangThaiIndex = cursor.getColumnIndex(COLUMN_TRANGTHAI);
+
+            // Kiểm tra nếu các chỉ số cột hợp lệ
+            if (tenDichVuIndex >= 0 && thoiGianBatDauIndex >= 0 && thoiGianHoanThanhIndex >= 0 &&
+                    giaTienIndex >= 0 && diaChiIndex >= 0 && ptttIndex >= 0 && ghiChuIndex >= 0 && trangThaiIndex >= 0) {
+                // Trả về dữ liệu dưới dạng mảng String
+                return new String[] {
+                        cursor.getString(tenDichVuIndex),          // Tên dịch vụ
+                        cursor.getString(thoiGianBatDauIndex),     // Thời gian bắt đầu
+                        cursor.getString(thoiGianHoanThanhIndex),  // Thời gian hoàn thành
+                        String.valueOf(cursor.getDouble(giaTienIndex)), // Giá tiền
+                        cursor.getString(diaChiIndex),             // Địa chỉ
+                        cursor.getString(ptttIndex),               // Phương thức thanh toán
+                        cursor.getString(ghiChuIndex),             // Ghi chú
+                        cursor.getString(trangThaiIndex)           // Trạng thái
+                };
+            }
+        }
+        return null;  // Nếu không tìm thấy dữ liệu
+    }
+
+
+
+    public int getDatLichCount() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String countQuery = "SELECT COUNT(*) FROM DatLich"; // Thay 'DatLich' bằng tên bảng của bạn nếu khác
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = 0;
+        if (cursor != null) {
+            cursor.moveToFirst();
+            count = cursor.getInt(0); // Lấy giá trị đếm từ cột đầu tiên
+            cursor.close();
+        }
+        return count;
+    }
+    public Cursor getDatLichByTenDichVu(String tenDichVu) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + TABLE_DATLICH + " WHERE " + COLUMN_TENDICHVU + " = ?";
+        return db.rawQuery(query, new String[]{tenDichVu});
+    }
+
 
 }

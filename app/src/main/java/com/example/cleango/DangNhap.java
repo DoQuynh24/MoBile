@@ -70,9 +70,13 @@ public class DangNhap extends AppCompatActivity {
                     }
                     cursor.close();
                 }
+                int userId = -1;
                 if (hoTen != null) {
                     PreferencesManager preferencesManager = PreferencesManager.getInstance(DangNhap.this);
+
                     preferencesManager.saveHoTen(hoTen);
+                    preferencesManager.saveTaiKhoan(taiKhoan);
+                    preferencesManager.saveMatKhau(matKhau);
                     preferencesManager.saveRole(vaiTro);
 
                     // Chuyển hướng dựa trên vai trò

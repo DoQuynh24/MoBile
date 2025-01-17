@@ -5,4 +5,6 @@
     <color name="card_default_background">#43D0ECF4</color>
     <color name="card_selected_background">#D0ECF4</color>
     <color name="button">#4CAF50</color>
+    <color name="selected">#FF9800</color>
+    <color name="defaultColor">#E0E0E0</color>
 </resources>
